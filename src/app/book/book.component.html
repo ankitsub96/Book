@@ -1,0 +1,99 @@
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css ">
+<link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+
+<div class="container">
+  <h1>Book List
+    <a [routerLink]="['/book-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+  </h1>
+
+  <table [mfData]="books" #mf="mfDataTable" [mfRowsOnPage]="5" [mfSaveRowsOnPage]="true" (mfSelectedEntities)="setSelectedEntities($event)">
+    <thead>
+        <tr>
+            <!-- <th style="width: 15%">
+                <mfRowSelectorHead></mfRowSelectorHead>
+            </th> -->
+            <th style="width: 15%">
+                <mfDefaultSorter by="title" [mfShowSortableArrows]="true">Title</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+                <mfDefaultSorter by="author">Author</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+                <mfDefaultSorter by="isbn">ISBN</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+                <mfDefaultSorter by="publisher">Publisher</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+                <mfDefaultSorter by="published_year">Publish Year</mfDefaultSorter>
+            </th>
+            <th style="width: 15%">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of mf.data;">
+            <!-- <td><mfRowSelector [entity]="book" [checkboxId]="ndx"></mfRowSelector></td> -->
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.publisher }}</td>
+            <td>{{ book.published_year }}</td>
+            <td><a [routerLink]="['/book-details', book._id]" class="btn btn-primary">See Details
+            </a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<!-- <table id="contentTable" class="container table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Publisher</th>
+      <th>Publish Year</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.publisher }}</td>
+      <td>{{ book.published_year }}</td>
+      <td><a [routerLink]="['/book-details', book._id]" class="btn btn-primary">See Details
+      </a></td>
+    </tr>
+  </tbody>
+</table> -->
+
+  <!-- <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td><a [routerLink]="['/book-details', book._id]" class="btn btn-primary">See Details
+        </a></td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

@@ -1,0 +1,38 @@
+.row .btn{
+    margin: 20px;
+}
+.container{
+    background-color: rgb(140, 241, 241);
+    border-radius: 1rem;
+    margin: 30px auto;
+    padding: 4rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+
+    *{
+        overflow: hidden;
+    }
+    .table{
+        border-radius: 2rem;
+        border: 5px solid white;
+    }
+    tr{
+        border-radius: 2rem;
+        border: 2px solid white;
+        padding: 1rem;
+        // margin: 30px auto;
+    }
+    dl.list{
+        border-radius: 2rem;
+        border: 5px solid white;
+        padding: 2rem;
+        margin: 30px auto;
+    }
+    tr:hover{
+        background-color: rgb(143, 245, 194);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    }
+    dl.list:hover{
+        background-color: rgb(143, 245, 194);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    }
+}

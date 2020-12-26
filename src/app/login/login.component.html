@@ -1,0 +1,67 @@
+<div class="jumbotron container">
+  <h1 class="display-4">Hello, User!</h1>
+  <p class="lead">To continue further, Please register or Login.</p>
+  <hr class="my-4">
+  <p>If already Registered, Please Click on the login Button</p>
+  <p class="lead">
+    <button class="btn btn-primary btn-lg" role="button" (click)="openModal()" type="button" data-toggle="modal" data-target="#RegisterModal" style="margin: 2rem">Register</button>
+    <a class="btn btn-success btn-lg" role="button">Login</a>
+  </p>
+</div>
+<div [hidden]="!loggedIn" class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updateUserInfo(userInput)" #userForm="ngForm">
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="name">Name</label>
+          <input type="email" class="form-control" [(ngModel)]="userInput.name" name="name" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="username">Username</label>
+          <input type="email" class="form-control" [(ngModel)]="userInput.username" name="username" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userInput.password" name="password" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="passwordCheck">Confirm Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userInput.passwordCheck " name="passwordCheck" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!userInput.form.valid">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- [disabled]="!userInput.form.valid" -->
+<!-- last iteration: works without 1 of the validations  -->
+<!-- <div [hidden]="!loggedIn" class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form #userForm="ngForm">
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="name">Name</label>
+          <input type="email" class="form-control" [(ngModel)]="userInput.name" name="name" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="username">Username</label>
+          <input type="email" class="form-control" [(ngModel)]="userInput.username" name="username" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userInput.password" name="password" required>
+        </div>
+        <div class="form-group" style="display: inline-block; margin: 2rem;">
+          <label for="passwordCheck">Confirm Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userInput.passwordCheck " name="passwordCheck" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" (click)="updateUserInfo(userInput)" class="btn btn-success">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

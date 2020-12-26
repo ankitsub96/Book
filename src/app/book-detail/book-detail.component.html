@@ -1,0 +1,31 @@
+<!-- <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css ">
+<link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"> -->
+
+<div class="row px-5 py-3">
+  <div class="col-md-12">
+    <a [routerLink]="['']" class="btn btn-danger mx-5">Back To details</a>
+  </div>
+</div>
+<div class="container">
+  <h1>{{ book.title }}</h1>
+  <dl class="list">
+    <dt>ISBN</dt>
+    <dd>{{ book.isbn }}</dd>
+    <dt>Author</dt>
+    <dd>{{ book.author }}</dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher }}</dd>
+    <dt>Price</dt>
+    <dd>{{ book.price }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ book.updated_at }}</dd>
+  </dl>
+  <div class="row">
+    <div class="col-md-2 ml-auto px-2">
+      <a [routerLink]="['/book-edit', book._id]" class="btn btn-success p-5">EDIT</a>
+    </div>
+    <div class="col-md-2 ml-auto px-2">
+      <button class="btn btn-danger p-5" type="button" (click)="deleteBook(book._id)">DELETE</button>
+    </div>
+  </div>
+</div>
