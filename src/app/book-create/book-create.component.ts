@@ -8,16 +8,23 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./book-create.component.scss'],
 })
 export class BookCreateComponent implements OnInit {
-
+  loggedIn:boolean
   book = {};
 
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    this.loggedIn=JSON.parse(localStorage.getItem('loggedIn'))
+    // console.log('in bookCreate:  ')
+    // console.log(this.loggedIn)
+    if(this.loggedIn==undefined){
+      this.loggedIn=false;
+      console.log('not logged in')
+      this.router.navigate(['/login']);
+    }
   }
 
   saveBook() {
-    console.log("Inside Book-create")
     this.http.post('http://localhost:3000/', this.book)
       .subscribe(res => {
           let id = res['_id'];

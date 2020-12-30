@@ -1,3 +1,6 @@
+<app-navbar route="books"></app-navbar>
+
+
 <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css ">
 <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 
@@ -43,16 +46,18 @@
             <td>{{ book.isbn }}</td>
             <td>{{ book.publisher }}</td>
             <td>{{ book.published_year }}</td>
-            <td><a [routerLink]="['/book-details', book._id]" class="btn btn-primary">See Details
+            <td><a [routerLink]="['/book-details', book._id]" style="font-size: 1.5rem;" class="btn btn-primary">See Details
             </a></td>
         </tr>
     </tbody>
     <tfoot>
-        <tr>
-            <td colspan="4">
-                <mfBootstrapPaginator [rowsOnPageSet]="[5,10]"></mfBootstrapPaginator>
-            </td>
-        </tr>
+      <tr class="navigation">
+        <td colspan="12">
+            <mfBootstrapPaginator style="display: flex; justify-content: space-between;
+            width: 100%; max-width: 1000%;"
+            [rowsOnPageSet]="[5,10]"></mfBootstrapPaginator>
+        </td>
+      </tr>
     </tfoot>
 </table>
 <!-- <table id="contentTable" class="container table table-striped table-bordered" style="width:100%">

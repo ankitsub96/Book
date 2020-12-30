@@ -9,22 +9,30 @@ import { HttpClient } from '@angular/common/http';
   encapsulation: ViewEncapsulation.None
 })
 export class BookEditComponent implements OnInit {
-
+  loggedIn:boolean
   book = {};
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.loggedIn=JSON.parse(localStorage.getItem('loggedIn'))
+
+    if(this.loggedIn==undefined){
+      this.loggedIn=false;
+      console.log('not logged in')
+      this.router.navigate(['/login']);
+    }
+
     this.getBook(this.route.snapshot.params['id']);
   }
 
-  getBook(id) {
+  getBook(id:any) {
     this.http.get('http://localhost:3000/'+id).subscribe(data => {
       this.book = data;
     });
   }
 
-  updateBook(id, data) {
+  updateBook(id:any, data:object) {
     this.http.put('http://localhost:3000/'+id, data)
       .subscribe(res => {
           let id = res['_id'];

@@ -1,0 +1,17 @@
+.navbar-brand{
+    font-size: 2rem;
+    vertical-align: middle;
+}
+ul{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // max-height: 3rem;
+}
+.nav-item{
+    font-size: 1.5rem;
+    margin: auto 2%;
+    max-width: unset;
+    width: unset;
+}

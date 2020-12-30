@@ -1,0 +1,36 @@
+.jumbotron, .inputComponent{
+  width: 46%;
+  display: inline-flex;
+  margin: auto 1%;
+  height: 65%;
+}
+.jumbotron{
+  flex-direction: column;
+}
+label,input{
+  font-size: 1.7rem;
+}
+.row .btn{
+  margin: 20px;
+  font-size: 2rem;
+  // background-color: white;
+  border-radius: 999999px;
+  padding: 0.4rem 2rem !important;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+}
+.row .btn.btn-outline-success:hover{
+background-color:green;
+color: white;
+}
+.row .btn.btn-outline-danger:hover{
+  background-color:red;
+  color: white;
+}
+.warning{
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+  background-color: rgba(110, 110, 255, 0.8);
+}

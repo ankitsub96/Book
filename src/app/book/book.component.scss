@@ -1,61 +1,11 @@
-
-body{
-    padding: 3rem;
+body {
+  padding: 3rem;
 }
 
-.container{
-    background-color: rgb(140, 241, 241);
-    border-radius: 1rem;
-    margin: 30px auto;
-    padding: 4rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
 
-    *{
-        overflow: hidden;
-    }
-    .table{
-        border-radius: 2rem;
-        border: 5px solid white;
-        text-align: center;
-    }
-    th{
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        font-weight: 600;   
-        border-radius: 1rem;
-        border: 2px solid white;
-        padding: 1rem;
-        background-color: rgb(140, 241, 241);
-        a{
-            color: white;  
-        }
-    }
-    th, & td{
-        text-align: center;
-    }
-    tr{
-        border-radius: 2rem;
-        border: 2px solid #337ab7;
-        padding: 1rem;
-        background-color: white;
-        // margin: 30px auto;
-        td{
-            padding:1rem;
-        }
-    }
-    dl.list{
-        border-radius: 2rem;
-        border: 5px solid white;
-        padding: 2rem;
-        margin: 30px auto;
-    }
-    tr:hover{
-        background-color: rgb(143, 245, 194);
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-    }
-    dl.list:hover{
-        background-color: rgb(143, 245, 194);
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
-    }
+mfbootstrappaginator * {
+  display: inline-block;
+  // &:n-thchild(1){
+  //   width: 100%;
+  // }
 }

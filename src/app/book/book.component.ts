@@ -28,6 +28,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.http.get('http://localhost:3000').subscribe(data => {
       this.books = data;
+      console.log(JSON.parse(localStorage.getItem('loggedIn')))
     });
   }
   

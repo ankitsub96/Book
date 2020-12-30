@@ -1,6 +1,35 @@
+.container{
+  width: 50%;
+  margin: auto;
+}
 .form-group .form-control{
-    background-color: #f6ffd4;;
+    background-color: #f6ffd4;
+    font-size: 1.7rem;
 }
 .form-group .form-control:hover{
     background-color: white;
+}
+h1{
+  margin-bottom: 4rem;
+}
+label,input{
+  font-size: 1.7rem;
+}
+.row .btn{
+  margin: 20px;
+  font-size: 1.4rem;
+  // background-color: white;
+  border-radius: 999999px;
+  padding: 0.4rem 2rem !important;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+}
+.row .btn.btn-outline-success:hover{
+background-color:green;
+color: white;
+}
+.row .btn.btn-outline-danger:hover{
+  background-color:red;
+  color: white;
 }
